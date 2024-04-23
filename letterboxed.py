@@ -7,7 +7,7 @@ import itertools
 LETTERS = ""
 
 def get_dict():
-    os.system("cls")
+    os.system('cls' if os.name == 'nt' else 'clear')
     with open("dict.json", "r") as read_file:
         data = json.load(read_file)
     dictionary = [i.upper() for i in data["words"]] #forcing words to be uppercase
@@ -15,7 +15,7 @@ def get_dict():
         valid = LETTERS
     else:
         input("What are todays letterboxd letters? ").upper()#userinput for todays puzzle
-    os.system("cls")
+   os.system('cls' if os.name == 'nt' else 'clear')
     return dictionary, valid
 
 def remove_invalid(dictionary, valid): #removing invalid words
